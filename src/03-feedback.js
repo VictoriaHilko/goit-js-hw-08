@@ -9,6 +9,16 @@ form.addEventListener('input', throttle(onInput, 500));
 
 const currentData = JSON.parse(localStorage.getItem('feedback-form-state'));
 
+if(currentData){
+    form.email.value = currentData.email;
+    form.message.value = currentData.message;
+
+    data = {
+        email_data: form.email.value,
+        message_data: form.message.value
+    };
+    // console.log(data);
+}
 
 function onInput() {
 
@@ -25,16 +35,16 @@ window.addEventListener('load', onLoad);
 function onLoad() {
     // const getformData = JSON.parse(localStorage.getItem('feedback-form-state'));
 
-    if(currentData){
-        form.email.value = currentData.email;
-        form.message.value = currentData.message;
+    // if(currentData){
+    //     form.email.value = currentData.email;
+    //     form.message.value = currentData.message;
     
-        data = {
-            email_data: form.email.value,
-            message_data: form.message.value
-        };
-        // console.log(data);
-    }
+    //     data = {
+    //         email_data: form.email.value,
+    //         message_data: form.message.value
+    //     };
+    //     // console.log(data);
+    // }
 }
 
 //3
@@ -43,7 +53,6 @@ form.addEventListener('submit', onSubmit);
 function onSubmit(event) {
     event.preventDefault();
     console.log(data);
-    console.log(currentData);
     localStorage.removeItem('feedback-form-state');
     reset(form);
 }
