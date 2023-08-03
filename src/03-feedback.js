@@ -33,6 +33,7 @@ function onLoad() {
             email_data: form.email.value,
             message_data: form.message.value
         };
+        console.log(data);
     }
 }
 
