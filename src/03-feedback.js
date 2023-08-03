@@ -29,23 +29,6 @@ function onInput() {
     localStorage.setItem('feedback-form-state', JSON.stringify(data));
 }
 
-//2
-// window.addEventListener('load', onLoad);
-
-// function onLoad() {
-    // const getformData = JSON.parse(localStorage.getItem('feedback-form-state'));
-
-    // if(currentData){
-    //     form.email.value = currentData.email;
-    //     form.message.value = currentData.message;
-    
-    //     data = {
-    //         email_data: form.email.value,
-    //         message_data: form.message.value
-    //     };
-    //     // console.log(data);
-    // }
-// }
 
 //3
 form.addEventListener('submit', onSubmit);
