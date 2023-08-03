@@ -37,6 +37,6 @@ function onSubmit(event) {
     event.preventDefault();
     console.log(data);
     localStorage.removeItem('feedback-form-state');
-    reset(form);
+    form.reset();
 }
 
