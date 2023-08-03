@@ -39,9 +39,3 @@ function onSubmit(event) {
     localStorage.removeItem('feedback-form-state');
     reset(form);
 }
-
-
-
-
-
-
