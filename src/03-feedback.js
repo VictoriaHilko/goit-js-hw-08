@@ -30,7 +30,7 @@ function onLoad() {
         form.elements.email.value = getformData.email_data;
         form.elements.message.value = getformData.message_data;
 
-        console.log(data);
+        // console.log(data);
     }
     console.log(data);
 }
@@ -39,6 +39,7 @@ function onLoad() {
 form.addEventListener('submit', onSubmit);
 
 function onSubmit(event) {
+    event.preventDefault();
     console.log(data);
     localStorage.removeItem('feedback-form-state');
     reset(form);
