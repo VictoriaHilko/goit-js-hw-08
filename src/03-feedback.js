@@ -14,25 +14,25 @@ if(currentData){
     form.message.value = currentData.message;
 
     data = {
-        email_data: form.email.value,
-        message_data: form.message.value
+        email: form.email.value,
+        message: form.message.value
     };
     // console.log(data);
 }
 
 function onInput() {
 
-    const data = {
-        email_data: form.email.value,
-        message_data: form.message.value
+    data = {
+        email: form.email.value,
+        message: form.message.value
     };
     localStorage.setItem('feedback-form-state', JSON.stringify(data));
 }
 
 //2
-window.addEventListener('load', onLoad);
+// window.addEventListener('load', onLoad);
 
-function onLoad() {
+// function onLoad() {
     // const getformData = JSON.parse(localStorage.getItem('feedback-form-state'));
 
     // if(currentData){
@@ -45,7 +45,7 @@ function onLoad() {
     //     };
     //     // console.log(data);
     // }
-}
+// }
 
 //3
 form.addEventListener('submit', onSubmit);
