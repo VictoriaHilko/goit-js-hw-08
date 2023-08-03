@@ -9,15 +9,6 @@ form.addEventListener('input', throttle(onInput, 500));
 
 const currentData = JSON.parse(localStorage.getItem('feedback-form-state'));
 
-if(currentData){
-    form.email.value = currentData.email;
-    form.message.value = currentData.message;
-
-    data = {
-        email_data: form.email.value,
-        message_data: form.message.value
-    };
-}
 
 function onInput() {
 
@@ -29,19 +20,21 @@ function onInput() {
 }
 
 //2
-// window.addEventListener('load', onLoad);
+window.addEventListener('load', onLoad);
 
-// function onLoad() {
-//     // const getformData = JSON.parse(localStorage.getItem('feedback-form-state'));
+function onLoad() {
+    // const getformData = JSON.parse(localStorage.getItem('feedback-form-state'));
 
-//     if (getformData) {
-//         form.elements.email.value = getformData.email_data;
-//         form.elements.message.value = getformData.message_data;
-
-//         // console.log(data);
-//     }
-//     console.log(data);
-// }
+    if(currentData){
+        form.email.value = currentData.email;
+        form.message.value = currentData.message;
+    
+        data = {
+            email_data: form.email.value,
+            message_data: form.message.value
+        };
+    }
+}
 
 //3
 form.addEventListener('submit', onSubmit);
