@@ -33,7 +33,7 @@ function onLoad() {
             email_data: form.email.value,
             message_data: form.message.value
         };
-        console.log(data);
+        // console.log(data);
     }
 }
 
@@ -43,6 +43,7 @@ form.addEventListener('submit', onSubmit);
 function onSubmit(event) {
     event.preventDefault();
     console.log(data);
+    console.log(currentData);
     localStorage.removeItem('feedback-form-state');
     reset(form);
 }
